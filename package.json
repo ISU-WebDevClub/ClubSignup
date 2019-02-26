@@ -1,11 +1,27 @@
 {
   "name": "clubsignup",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Goals  - Create a form to enter email into local storage  - Create a page to list all emails in local storage  - Download all emails as csv  - Edit entered email  -",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "ip": "^1.1.5",
+    "vash": "^0.12.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ISU-WebDevClub/ClubSignup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ISU-WebDevClub/ClubSignup/issues"
+  },
+  "homepage": "https://github.com/ISU-WebDevClub/ClubSignup#readme"
 }

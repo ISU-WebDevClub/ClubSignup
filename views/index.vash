@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Club Signup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        
+        <form>
+            <label for="Email">Email</label>
+            <input id="Email" name="Email" type="text" placeholder="Email">
+            <button type="submit">Submit</button>
+        </form>
+
+
+        <!-- <div id="test"></div> -->
+
+    </body>
+</html>
