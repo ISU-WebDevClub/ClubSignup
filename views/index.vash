@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Club Signup</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <script type="text/javascript" src="index.js"></script>
-    </head>
-    <body>
+@html.extend('_layout', function(model){
+
+    @html.block('content', function(model){
+
+        <link rel="stylesheet" type="text/css" href="/css/index.css"/>
+        <script type="text/javascript" src="/javascript/index.js"></script>
+
+        @{
+            model.title = "Index";
+        }
         
+        <center><h1>Web Development Club</h1></center>
         <form>
+            <center>
             <label for="Email">Email</label>
-            <input id="Email" name="Email" type="text" placeholder="Email">
+            <input id="Email" name="Email" type="text" placeholder="Email"/>
             <button type="submit">Submit</button>
+            </center>
         </form>
 
+    })
+})
 
-        <!-- <div id="test"></div> -->
-
-    </body>
-</html>
