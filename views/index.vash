@@ -9,14 +9,10 @@
             model.title = "Index";
         }
         
-        <center><h1>Web Development Club</h1></center>
-        <form>
-            <center>
-            <label for="Email">Email</label>
-            <input id="Email" name="Email" type="text" placeholder="Email"/>
-            <button type="submit">Submit</button>
-            </center>
-        </form>
+        <h1>Web Development Club</h1>
+        <label for="Email">Email</label>
+        <input id="Email" name="Email" type="text" placeholder="Email"/>
+        <button type="submit">Submit</button>
 
     })
 })
