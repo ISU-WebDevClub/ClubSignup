@@ -2,14 +2,18 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/css/layout.css"/>
+        <script type="text/javascript" src="/javascript/shared.js"></script>
+
         <title>@model.title | Club Signup</title>
     </head>
     <body>
         <header>
-            <h1>Club Signup</h1>
-            <ul>
-            <a href="/index">Index</a>
-            <a href="/list">List</a>
+            <!-- <h1>Our logo "Club Signup."</h1>*/ -->
+            <ul class="headerLinks">
+                <li><a href="/index">Club Signup</a></li>
+                <li><a href="/index">Index</a></li>
+                <li><a href="/list">List</a></li>
             </ul>
         </header>
             @html.block('content')

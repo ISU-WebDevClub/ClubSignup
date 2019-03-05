@@ -2,17 +2,29 @@
 
     @html.block('content', function(model){
 
-        <link rel="stylesheet" type="text/css" href="/css/index.css"/>
-        <script type="text/javascript" src="/javascript/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/list.css"/>
+        <script type="text/javascript" src="/javascript/list.js"></script>
 
         @{
             model.title = "List";
         }
         
-        <h1>List</h1>
+        <h1>Email List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                </tr>
+            </thead>    
+            <tbody id="table">
 
-        <a href="/index">Index</a>
+            </tbody>
+        </table>
 
+        <script>
+            tableEmails();
+        </script>
     })
 })
 
