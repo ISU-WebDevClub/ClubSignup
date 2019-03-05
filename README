@@ -8,12 +8,26 @@
   
 
  ## GIT Commands
+ - git clone (github link)              (FIRST TIME ONLY)
 
  - git pull 
- - git add . (Adds Everything)
+ - git add .                            (Adds Everything)
  - git commit -m "MESSAGE"
  - git push
 
+## vim Commands
  - exit vim: :q!
  - save vim: :qw
- - 
+
+## Server
+ - npm run dev                          (RUN SERVER)
+ - ctrl-c                               (STOP SERVER)
+ - rs                                   (RESET SERVER WHEN RUNNING)
+
+## Design For Pages
+### link
+    - 
+### Index
+    - Centered
+    - Any color for now
+    - rounded edges (5px)
