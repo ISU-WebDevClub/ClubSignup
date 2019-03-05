@@ -7,8 +7,10 @@
     <body>
         <header>
             <h1>Club Signup</h1>
+            <ul>
             <a href="/index">Index</a>
             <a href="/list">List</a>
+            </ul>
         </header>
             @html.block('content')
         <footer>
