@@ -2,11 +2,13 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@model.title</title>
+        <title>@model.title | Club Signup</title>
     </head>
     <body>
         <header>
             <h1>Club Signup</h1>
+            <a href="/index">Index</a>
+            <a href="/list">List</a>
         </header>
             @html.block('content')
         <footer>

@@ -1,10 +1,9 @@
-console.log("Hello World");
+function submitEmail() {
+    let input = document.getElementById("Email");
+    
+    let email = input.value;
+    input.value = "";
 
+    
 
-
-// let test;
-// test = document.getElementById("test");
-
-// test.innerHTML += "<h1>testing</h1>";
-
-
+}

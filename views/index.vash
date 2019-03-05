@@ -1,4 +1,4 @@
-@html.extend('_layout', function(model){
+@html.extend('Shared/_layout', function(model){
 
     @html.block('content', function(model){
 
@@ -6,17 +6,15 @@
         <script type="text/javascript" src="/javascript/index.js"></script>
 
         @{
-            model.title = "Index";
+            model.title = "Home";
         }
         
-        <center><h1>Web Development Club</h1></center>
-        <form>
-            <center>
-            <label for="Email">Email</label>
-            <input id="Email" name="Email" type="text" placeholder="Email"/>
-            <button type="submit">Submit</button>
-            </center>
-        </form>
+        <h1>Web Development Club</h1>
+        <label for="Email">Email</label>
+        <input id="Email" name="Email" type="text" placeholder="Email"/>
+        <button type="submit" onclick="submitEmail()">Submit</button>
+
+        <a href="/list">List</a>
 
     })
 })
