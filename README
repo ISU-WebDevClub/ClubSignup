@@ -5,4 +5,15 @@
  - Create a page to list all emails in local storage
  - Download all emails as csv
  - Edit entered email
+  
+
+ ## GIT Commands
+
+ - git pull 
+ - git add . (Adds Everything)
+ - git commit -m "MESSAGE"
+ - git push
+
+ - exit vim: :q!
+ - save vim: :qw
  - 
