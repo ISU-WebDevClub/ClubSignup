@@ -1,7 +1,4 @@
 /* https://www.brandmarketing.iastate.edu/brand-elements/color-palette/ */
-
-
-
 body{
 
 }
@@ -16,6 +13,7 @@ header{
     padding: 0;
     overflow: hidden;
     background-color: #C8102E;
+
 }
 
 li {

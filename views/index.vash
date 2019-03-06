@@ -8,12 +8,14 @@
         @{
             model.title = "Home";
         }
-        
-        <h1>Web Development Club</h1>
-        <label for="Email">Email</label>
-        <input id="Email" name="Email" type="text" placeholder="Email" autocomplete="none"/>
-        <button type="submit" onclick="submitEmail()">Submit</button>
-        
+        <div class = "grid-container">
+            <div class = "email-item">
+            <h1>Web Development Club</h1>
+            <label for="Email">Email</label>
+            <input id="Email" name="Email" type="text" placeholder="Email" autocomplete="none"/>
+            <button type="submit" onclick="submitEmail()">Submit</button>
+            </div>
+        </div>
 
     })
 })
