@@ -22,7 +22,7 @@ li {
 
 li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -43,3 +43,11 @@ li a:hover {
     background-color: white;
 }
 
+
+footer{
+    text-align: center;
+    background-color: #C8102E;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
