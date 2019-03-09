@@ -23,7 +23,7 @@
         </table>
 
         <script>
-            tableEmails();
+            tableEmails2();
         </script>
     })
 })
