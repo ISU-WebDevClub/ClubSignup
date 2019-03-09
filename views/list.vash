@@ -8,23 +8,16 @@
         @{
             model.title = "List";
         }
-        
+        <div class = "grid-container">
+        <div class = "email-list">
         <h1>Email List</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                </tr>
-            </thead>    
-            <tbody id="table">
 
-            </tbody>
-        </table>
 
-        <script>
-            tableEmails2();
-        </script>
+          <script>
+                tableEmails2();
+            </script>
+            </div>
+        </div>
     })
 })
 

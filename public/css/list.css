@@ -2,3 +2,24 @@ td {
     text-align: center;
     border: black solid 1px;
 }
+
+body{
+    background-color: #F1BE48;
+    color: white;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: auto 80vw auto;
+    padding: 10px;
+    background-color: #F1BE48;
+}
+.email-list
+{
+    background-color: #C8102E;
+    grid-column: 2;
+    text-align: center;
+    border-radius: 25px;
+    padding-bottom: 10px;
+}
