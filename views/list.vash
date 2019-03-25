@@ -9,14 +9,25 @@
             model.title = "List";
         }
         <div class = "grid-container">
-        <div class = "email-list">
-        <h1>Email List</h1>
+            <div class = "email-list">
+            <h1>Email List</h1>
 
+            <div>
+                <table>
+                    <tbody id="container"></tbody>
+                </table>
+            </div>
 
           <script>
                 tableEmails2();
             </script>
             </div>
+
+            <style>
+                table{
+                    border: 1px black solid;
+                }
+            </style>
         </div>
     })
 })

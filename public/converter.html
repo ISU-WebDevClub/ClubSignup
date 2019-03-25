@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Maxwell DeVos" />
+        <title>Ascii Converter</title>
+    </head>
+    <body class="container">
+        <div class="header">
+            <div>
+                <h1>C Ascii Converter</h1>
+                <p>
+                    Converts ascii art to a C friendly string format of either a
+                    string literal or char array.
+                </p>
+            </div>
+        </div>
+
+        <!-- Options-->
+        <div class="body">
+            <div class="center">
+                <div class="textarea">
+                    <p>Ascii Art:</p>
+                    <textarea
+                        nowrap="nowrap"
+                        id="input"
+                        cols="80"
+                        rows="20"
+                        placeholder="Input Ascii Art here"
+                    ></textarea>
+                </div>
+                <!--Generator Type-->
+                <div>
+                    <fieldset>
+                        <legend>Pick a converting type:</legend>
+                        <input
+                            type="radio"
+                            id="string"
+                            name="type"
+                            onclick="hideArraySize(false)"
+                            checked
+                        />
+                        <label for="string">String Literal</label>
+
+                        <input
+                            type="radio"
+                            id="char"
+                            name="type"
+                            onclick="hideArraySize(true)"
+                        />
+                        <label for="char">char Array</label>
+                    </fieldset>
+                </div>
+
+                <div id="arraySizes" style="display: none;">
+                    <!-- Array Width-->
+                    <div class="input">
+                        <label>Width Dimension:</label>
+                        <input type="number" id="width" />
+                    </div>
+
+                    <!-- Array Height-->
+                    <div class="input">
+                        <label>Height Dimension:</label>
+                        <input type="number" id="height" />
+                    </div>
+                </div>
+
+                <button class="convert" onclick="convert();">Convert</button>
+
+                <div class="textarea">
+                    <p>Output:</p>
+                    <textarea
+                        nowrap="nowrap"
+                        id="output"
+                        cols="80"
+                        rows="20"
+                        placeholder="Output"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function hideArraySize(mode) {
+                if (mode) {
+                    document.getElementById("arraySizes").style.display =
+                        "block";
+                } else {
+                    document.getElementById("arraySizes").style.display =
+                        "none";
+                }
+            }
+
+            function addslashes(str) {
+                return (str + "")
+                    .replace(/[\\"']/g, "\\$&")
+                    .replace(/\u0000/g, "\\0");
+            }
+
+            function convert() {
+                let input = document.getElementById("input").value;
+                let output = document.getElementById("output");
+                let mode = document.getElementById("string").checked;
+
+                if (mode) {
+                    //string literal
+                    let result = `char *string_literal = `;
+
+                    input = addslashes(input);
+                    input = input.split("\n");
+                    for (let i = 0; i < input.length; i++) {
+                        result += `\n\t"${input[i]}\\n"`;
+                    }
+
+                    output.value = result += ";";
+                } else {
+                    //c array
+                    let width = document.getElementById("width").value;
+                    let height = document.getElementById("height").value;
+                    let result = `char char_array[${height}][${width}] = {\n`;
+
+                    input = input.split("\n");
+                    for (let i = 0; i < input.length; i++) {
+                        input[i] = input[i].split("");
+                    }
+
+                    //construct output array
+                    for (let i = 0; i < height; i++) {
+                        result += "\t{";
+                        if (input[i]) {
+                            input[i][0] = addslashes(input[i][0]); //escape string;
+                            result += `'${input[i][0]}'`;
+                        } else {
+                            result += `' '`;
+                        }
+
+                        for (let j = 1; j < width; j++) {
+                            if (input[i]) {
+                                if (input[i][j]) {
+                                    input[i][j] = addslashes(input[i][j]);
+                                    result += `, '${input[i][j]}'`;
+                                } else {
+                                    result += ", ' '";
+                                }
+                            } else {
+                                result += ", ' '";
+                            }
+                        }
+                        result += "},\n";
+                    }
+                    output.value = (result += "};\n");
+                }
+                return;
+            }
+        </script>
+
+        <style>
+            body {
+                background-color: #ffffff;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                margin: 0;
+                padding: 0;
+            }
+
+            textarea {
+                overflow: scroll;
+                width: 100%;
+            }
+
+            .container {
+                display: grid;
+                grid-column: auto 10% 10% 10% 10% 10% auto;
+                grid-row: 30px 30px auto;
+                grid-template-areas:
+                    "h h h h h h h"
+                    ". . . . . . ."
+                    ". . . . . . ."
+                    ". . b b b . .";
+            }
+
+            .header {
+                padding: 3px;
+                grid-area: h;
+                background-color: rgb(62, 62, 255);
+                color: rgb(255, 255, 255);
+                text-align: center;
+            }
+
+            .body {
+                margin-top: 10px;
+                text-align: center;
+                padding: 10px;
+                grid-area: b;
+                background-color: rgb(255, 255, 255);
+                box-shadow: 5px 5px 20px;
+                border-radius: 5px;
+            }
+
+            .convert {
+                padding: 5px;
+                margin: 2px;
+                border: none;
+                background-color: rgb(107, 187, 107);
+                color: white;
+                border-radius: 7px;
+                font-size: 1.2em;
+                width: 20%;
+            }
+            .convert:hover {
+                opacity: 0.5;
+            }
+
+            .input {
+                padding: 5px;
+            }
+
+            .textarea {
+                text-align: start;
+            }
+
+            .center {
+                width: 75%;
+                margin: auto;
+            }
+        </style>
+    </body>
+</html>

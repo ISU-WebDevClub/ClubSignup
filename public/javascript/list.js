@@ -17,16 +17,14 @@ function tableEmails2() {
     let len = localStorage.length;
     let key;
     let emailList = [len];
-    for(key = 0; key < len; key++)
-    {
-        p = localStorage.getItem(key+1);
+    for (key = 0; key < len; key++) {
+        p = localStorage.getItem(key + 1);
         emailList[key] = p;
     }
 
-    var br = document.createElement('br');
+    var br = document.createElement("br");
 
-    for(key = 0; key < emailList.length; key++)
-    {
+    for (key = 0; key < emailList.length; key++) {
         document.writeln(i + ": " + emailList[key] + "<br>");
         i++;
     }
