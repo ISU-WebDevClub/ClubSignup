@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Circle Test</title>
+    </head>
+    <body>
+        <canvas
+            id="canvas"
+            height="400"
+            width="400"
+            style="border: 1px solid black"
+        >
+            Your browser does not support the html5 canvas.
+        </canvas>
+        <script>
+            let ctx = document.getElementById("canvas").getContext("2d");
+            // let grid = [];
+            let gSize = 20;
+            let dimension = 400;
+
+            let x = 2;
+            let y = 2;
+            let radius = 3;
+
+            window.addEventListener("keypress", e => {
+                switch (e.keyCode) {
+                    case 119: //up
+                        y--;
+                        break;
+                    case 97: //left
+                        x--;
+                        break;
+                    case 115: //down
+                        y++;
+                        break;
+                    case 100: //right
+                        x++;
+                        break;
+                    default:
+                        console.log(e.keyCode);
+                        break;
+                }
+                ctx.clearRect(0, 0, dimension, dimension);
+                alg1();
+            });
+
+            alg1();
+
+            /**
+             * First algorithm that works pretty well but could be improved even if its not actively used.
+             * */
+            function alg1() {
+                for (let i = y - radius; i < y + radius; i++) {
+                    for (let j = x - radius; j < x + radius; j++) {
+                        let distance = Math.sqrt(
+                            Math.pow(x - j, 2) + Math.pow(y - i, 2)
+                        );
+                        if (distance < radius) {
+                            draw(j, i, distance);
+                        }
+                    }
+                }
+            }
+
+            /**
+             * Supposed to be more efficent
+             * */
+            function alg2() {
+                
+            }
+
+            //draw circle
+            function draw(givenX, givenY, distance) {
+                let percent = (distance * 100) / radius;
+
+                if (percent < 25) ctx.fillStyle = "red";
+                else if (percent < 50) ctx.fillStyle = "orange";
+                else if (percent < 75) ctx.fillStyle = "yellow";
+                else ctx.fillStyle = "green";
+
+                ctx.fillRect(givenX * gSize, givenY * gSize, gSize, gSize);
+            }
+        </script>
+    </body>
+</html>
