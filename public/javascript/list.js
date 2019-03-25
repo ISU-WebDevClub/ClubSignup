@@ -1,19 +1,19 @@
-// function tableEmails() {
-//     let json = getItemFromStorage("emails");
-//     console.log(json);
-//     let table = document.getElementById("table");
-//     json.forEach((row, index) => {
-//         table.innerHTML += `
-//         <tr>
-//             <td>${index}</td>
-//             <td>${row.email}@iastate.edu</td>
-//         </tr>`;
-//     });
-// }
+function tableEmails() {
+    let json = getItemFromStorage("emails");
+    console.log(json);
+    let table = document.getElementById("table");
+    json.forEach((row, index) => {
+        table.innerHTML += `
+        <tr>
+            <td>${index}</td>
+            <td>${row.email}@iastate.edu</td>
+        </tr>`;
+    });
+}
 
 let i = 1;
 
-function tableEmails() {
+function tableEmails2() {
     let len = localStorage.length;
     let key;
     let emailList = [len];
