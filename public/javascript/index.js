@@ -6,8 +6,8 @@ function submitEmail() {
     let email = input.value;
     input.value = "";
     
-    localStorage.setItem(i, email);
-    //addItemToStorage("emails",{ "email": email});
-    //console.log(getItemFromStorage("emails"))
+    // localStorage.setItem(i, email);
+    addItemToStorage("emails",{ "email": email});
+    console.log(getItemFromStorage("emails"))
     i++;
 }

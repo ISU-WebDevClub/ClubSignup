@@ -14,7 +14,7 @@ function addItemToStorage(key, object) {
 function getItemFromStorage(key){
     let json = JSON.parse(localStorage.getItem(key));
     
-    if (json === undefined) {
+    if (!json) {
         json = [];
     }
 

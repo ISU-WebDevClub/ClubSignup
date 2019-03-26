@@ -14,20 +14,14 @@
 
             <div>
                 <table>
-                    <tbody id="container"></tbody>
+                    <tbody id="table"></tbody>
                 </table>
             </div>
 
           <script>
-                tableEmails2();
+                tableEmails();
             </script>
             </div>
-
-            <style>
-                table{
-                    border: 1px black solid;
-                }
-            </style>
         </div>
     })
 })
