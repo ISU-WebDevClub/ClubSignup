@@ -1,7 +1,6 @@
-
 function addItemToStorage(key, object) {
     let json = JSON.parse(localStorage.getItem(key));
-    
+
     if (!json) {
         json = [];
     }
@@ -11,9 +10,9 @@ function addItemToStorage(key, object) {
     localStorage.setItem(key, JSON.stringify(json));
 }
 
-function getItemFromStorage(key){
+function getItemsFromStorage(key) {
     let json = JSON.parse(localStorage.getItem(key));
-    
+
     if (!json) {
         json = [];
     }

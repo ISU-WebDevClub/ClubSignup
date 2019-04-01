@@ -1,5 +1,3 @@
-let i = 1;
-
 function submitEmail() {
     let input = document.getElementById("Email");
 
@@ -8,6 +6,4 @@ function submitEmail() {
     
     // localStorage.setItem(i, email);
     addItemToStorage("emails",{ "email": email});
-    console.log(getItemFromStorage("emails"))
-    i++;
 }
