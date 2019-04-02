@@ -19,3 +19,25 @@ function getItemsFromStorage(key) {
 
     return json;
 }
+
+function getItemFromStorage(key, index) {
+    let json = JSON.parse(localStorage.getItem(key));
+
+    if (!json) {
+        return null;
+    }
+
+    return json[index];
+}
+
+function updateItemInStorage(key, index, value){
+    let json = JSON.parse(localStorage.getItem(key));
+
+    if (!json) {
+        return null;
+    }
+
+    json[index] = value;
+
+    localStorage.setItem(key, JSON.stringify(json));
+}

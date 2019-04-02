@@ -1,0 +1,23 @@
+@html.extend('Shared/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        <link rel="stylesheet" type="text/css" href="/css/edit.css"/>
+        
+
+        @{
+            model.title = "Edit";
+        }
+
+        <div class = "grid-container">
+            <div class = "email-item">
+            <h1>Edit</h1>
+            <label for="Email">Email</label>
+            <input id="Email" name="Email" type="text" placeholder="Email" autocomplete="none"/>
+            <button type="submit" onclick="updateEmail()">Update</button>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="/javascript/edit.js"></script>
+    })
+})

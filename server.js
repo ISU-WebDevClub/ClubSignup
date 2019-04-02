@@ -20,6 +20,10 @@ app.get("/list", (req, res) => {
     res.render("list");
 });
 
+app.get("/edit:id?", (req, res) => {
+    res.render("edit");
+});
+
 app.use(function(req, res) {
     res.send("404");
 });
